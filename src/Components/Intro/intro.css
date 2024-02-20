@@ -1,37 +1,39 @@
 #intro {
-    height: cal(100vh -4rem);
+    height: calc(100vh -4rem);
     width: 100vw;
     max-width: 75rem;
-    margin: 0 auto;
+    margin: 10rem 0 auto;
     overflow: hidden;
     position: relative;
+    z-index: 1;
 }
 
 .bg {
     position: absolute;
-    top: -1rem; 
+    top: -4rem;
     right: 2rem;
-    height: 450px;
     width: 300px;
+    object-fit: cover;
+    height: 100vh;
+    z-index: -1;
 }
 
 .introContent {
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
     padding: 2rem;
-    margin: 0rem;
     font-size: 3rem;
     font-weight: 700;
     display: flex;
     flex-direction: column;
-    justify-self: center;  
+    justify-self: center;
 }
 
 .hello {
+    font-size: 1.75rem;
     font-weight: 1.75rem;
     font-weight: 400;
-    font-size: small;
-    z-index: 6;
+    padding: 0%;
 }
 
 .introName {
@@ -39,6 +41,7 @@
     font-size: large;
     font-weight: 800;
     z-index: 6;
+    margin: 0;
 }
 
 .introPara {
@@ -55,6 +58,16 @@
     padding: 0.75rem 2rem;
     border: none;
     border-radius: 2rem;
+
+}
+
+
+.btn span {
+    pointer-events: none;
+}
+
+.btn:hover {
+    background-color: red;
 }
 
 .btnImg {
@@ -64,20 +77,22 @@
 }
 
 @media screen and (max-width:840px) {
-    .bg{
+    .bg {
         right: -10vw;
     }
-    .introContent{
+
+    .introContent {
         font-size: 10vw;
     }
-    .hello{
-        font-size: 4.5rem;
-    } 
+
+    .hello {
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width:480px) {
-    .bg{
+    .bg {
         right: -20vw;
-    } 
-   
+    }
+
 }

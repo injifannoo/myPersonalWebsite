@@ -1,14 +1,15 @@
+
 .navbar {
-    background-color: rbg(30, 30, 30);
+    background-color: rgb(30, 30, 30);
     height: 5rem;
-    width: 100vm;
+    width: 100vw;
     max-width: 75rem;
     margin: 0;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 3;
 }
@@ -37,7 +38,7 @@
 
 .desktopMenuBtn {
     background: white;
-    columns: black;
+    color: black;
     border: none;
     display: flex;
     align-items: center;
@@ -53,7 +54,9 @@
 }
 
 .active {
-    color: blue;
+    color: yellow;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid yellow ;
 }
 
 @media screen and (max-width:840px) {
