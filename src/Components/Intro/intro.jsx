@@ -10,7 +10,7 @@ const Intro = () => {
     <span className="introName"> I'm Injifannoo Taammiruu Urgeessaa.</span>
    <p className="introPara"> Skilled MERN stack developer,Flutter developer <br/>
     Passionate computer Science Student at AAU.</p>
-    <Link><button className="btn"> <img src="" alt="" className="btnImg" />Contact me</button></Link>
+    <Link activeClass='active' to='myContacts' spy={true} smooth={true} offset={true} ><button className="btn"> <img src="" alt="" className="btnImg" />Contact me</button></Link>
 </div>
 
 <img src={profile} alt="profile" className="bg" />

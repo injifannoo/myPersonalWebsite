@@ -51,18 +51,27 @@
     height: 1rem;
     width: 1rem;
 }
+
+.active {
+    color: blue;
+}
+
 @media screen and (max-width:840px) {
-    .navbar{
+    .navbar {
         font-size: small;
     }
-    .desktopMenuListItem{
+
+    .desktopMenuListItem {
         font-size: 2vw;
     }
-    .desktopMenuBtn{
+
+    .desktopMenuBtn {
         font-size: 0.5rem;
     }
-    .desktopMenuImg{
+
+    .desktopMenuImg {
         height: 0.5rem;
-        width: 0.5rem;  
+        width: 0.5rem;
     }
 }
+

@@ -11,7 +11,7 @@ const Navbar=()=>{
         <Link activeClass='active' to='Intro' spy={true} smooth={true} offset={true} className="desktopMenuListItem">Home</Link>
         <Link activeClass='active' to='work' spy={true} smooth={true} offset={true}  className="desktopMenuListItem">Portfolio</Link>
         <Link activeClass='active' to='skill' spy={true} smooth={true} offset={true}  className="desktopMenuListItem">About</Link>
-        <Link activeClass='active' to='contact' spy={true} smooth={true} offset={true}  className="desktopMenuListItem">Clients</Link> 
+        <Link activeClass='active' to='client' spy={true} smooth={true} offset={true}  className="desktopMenuListItem">Clients</Link> 
     </div>
     <button className="desktopMenuBtn" onClick={()=>{
 document.getElementById('contact').scrollIntoView();

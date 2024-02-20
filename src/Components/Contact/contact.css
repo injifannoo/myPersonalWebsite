@@ -91,9 +91,10 @@
 
 
 }
-.submitBtn{
-    background:white ;
-    border:none;
+
+.submitBtn {
+    background: white;
+    border: none;
     border-radius: 0.5rem;
     margin: 2rem;
     padding: 0.75rem 3.5rem;
@@ -101,6 +102,10 @@
 
 .links {
     display: flex;
+    flex-direction: column;
+}
+
+.contacts {
     justify-self: center;
     align-items: center;
     width: 100vw;
@@ -116,4 +121,11 @@
     margin: 0.5rem;
     justify-self: center;
     align-items: center;
+}
+
+.myContacts {
+    padding-bottom: 1rem;
+}
+.pointer{
+    height: 25px;
 }
