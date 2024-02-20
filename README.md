@@ -37,31 +37,25 @@ This React-based portfolio is designed to provide visitors with insights into my
 
 Briefly describe the organization of your React project. For example:
 /
-|-- src/
-|   |-- components/
-|   |   |-- Navbar/
-|   |   |   |-- Navbar.jsx
-|   |   |   |-- Navbar.css
-|   |
-|   |   |-- Intro/
-|   |   |   |-- Intro.jsx
-|   |   |   |-- Intro.css
-|   |
-|   |   |-- Work/
-|   |   |   |-- Skill.jsx
-|   |   |   |-- Skill.css
-|   |
-|   |   |-- Contact/
-|   |   |   |-- Contact.jsx
-|   |   |   |-- Contact.css
-|   |
-|   |   |-- Footer/
-|   |   |   |-- Footer.jsx
-|   |   |   |-- Footer.css
-|
-|-- App.js
-|-- index.js
-|-- ...
+src/
+components/
+  Navbar/
+    Navbar.jsx
+    Navbar.css
+  Intro/
+    Intro.jsx
+    Intro.css
+  Work/
+    Skill.jsx
+    Skill.css
+  Contact/
+    Contact.jsx
+    Contact.css
+  Footer/
+    Footer.jsx
+    Footer.css
+App.js
+index.js
 
 
 
