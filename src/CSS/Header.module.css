@@ -1,0 +1,37 @@
+
+  .header {
+    background-color: #333;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+
+  }
+  
+  .title {
+    margin: 0;
+    padding: 10px; /* Add padding to create some space */
+    border: blue;
+    background-color: burlywood;
+  }
+
+  .list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;  
+}
+  
+  .link {
+    text-decoration: none;
+    color: blue;
+    margin: 10px;
+    font-size: larger;
+}
+.profileImage{
+    border-radius: 50%;
+}
+  

@@ -1,0 +1,30 @@
+
+.footer {
+    background-color: brown;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    height: min-content;
+    left: 0;
+    bottom: 0;
+
+  
+  }
+  .nav {
+    display: flex;
+    justify-content: center;
+  }
+  .list{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+  }
+  
+  .link{
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+  }
+  .text{
+    color: white;
+  }

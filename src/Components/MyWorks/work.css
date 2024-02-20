@@ -1,0 +1,65 @@
+#work {
+    overflow: hidden;
+    min-height: calc(100vh-4rem);
+    width: 100vm;
+    max-width: 60rem;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+.title {
+    margin: 1rem 0;
+    justify-self: center;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.desc {
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    max-width: 51rem;
+}
+
+.images {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    width: 100vw;
+    max-width: 65rem;
+    flex-wrap: wrap;
+}
+
+.image {
+    object-fit: cover;
+    height: 20rem;
+    margin: 0.5rem;
+}
+
+.workBtn {
+    margin: 3rem 0;
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+}
+
+@media screen and (max-width:845px) {
+    .image {
+        height: 37.5vw;
+    }
+}
+
+@media screen and (max-width:530px) {
+    .image {
+        height: 35vw;
+    }
+}
