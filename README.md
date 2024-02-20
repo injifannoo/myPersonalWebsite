@@ -67,9 +67,10 @@ index.js
 
 ## Usage
 
-1. Clone the repository: `git clone https://github.com/your-username/your-react-portfolio.git`
-2. Install dependencies: `npm install`
-3. Start the development server: `npm start`
+1. git clone https://github.com/injifannoo/myPersonalWebsite.git
+2. cd myPersonalWebsite
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
 
 Visit [http://localhost:3000](http://localhost:3000) to view the website locally.
 
