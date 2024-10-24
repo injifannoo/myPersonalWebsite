@@ -1,0 +1,42 @@
+name: Run Selenium Tests
+
+on:
+  push:
+    branches:
+      - main  # Run tests on the main branch when changes are pushed
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      selenium:
+        image: selenium/standalone-chrome
+        ports:
+          - 4444:4444
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install selenium pytest pytest-html
+
+      - name: Run Selenium tests
+        run: |
+          source venv/bin/activate
+          pytest --html=report.html --self-contained-html
+          
+      - name: Upload report
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-report
+          path: report.html
