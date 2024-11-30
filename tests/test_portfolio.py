@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
+
 import os
 
 @pytest.fixture(scope="module")
@@ -20,6 +21,7 @@ def setup_browser():
     # Initialize the Chrome WebDriver
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     yield driver
+    driver.set_page_load_timeout(240)
     driver.quit()
 
 def test_homepage_title(setup_browser):
@@ -87,7 +89,7 @@ def test_linkedin_link(setup_browser):
 def test_github_link(setup_browser):
     driver = setup_browser
     driver.get("http://localhost:5173")
-    
+
     github_link = driver.find_element(By.XPATH, "//a[contains(@href, 'github.com/injifannoo')]")
     assert github_link is not None
     assert github_link.get_attribute("href") == "https://github.com/injifannoo/"

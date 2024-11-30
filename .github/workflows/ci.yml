@@ -47,7 +47,7 @@ name: Run Selenium Tests CI
 on:
   push:
     branches:
-      - main  # Run tests on the main branch when changes are pushed
+      - main
 
 jobs:
   test:
@@ -55,7 +55,7 @@ jobs:
 
     services:
       selenium:
-        image: selenium/standalone-chrome  # Use Selenium Chrome standalone container
+        image: selenium/standalone-chrome
         ports:
           - 4444:4444
 
@@ -77,14 +77,26 @@ jobs:
           pip install -r requirements.txt
           pip install pytest-html webdriver-manager
 
-      # Step 4: Run Selenium tests with HTML report
-      - name: Run Selenium tests
+      # Step 4: Start the application server
+      - name: Start local server
+        run: |
+          python -m http.server 57173 &
         env:
-          DISPLAY: ":99.0"  # Required for running Selenium in headless mode
+          DISPLAY: ":99.0"
+
+      # Step 5: Wait for server to be ready
+      - name: Wait for server to be ready
+        run: |
+          for i in {1..10}; do
+            curl --fail http://localhost:5173 || sleep 10;
+          done
+
+      # Step 6: Run Selenium tests
+      - name: Run Selenium tests
         run: |
           pytest --html=report.html --self-contained-html
 
-      # Step 5: Upload the test report as an artifact
+      # Step 7: Upload the test report
       - name: Upload test report
         uses: actions/upload-artifact@v3
         with:
