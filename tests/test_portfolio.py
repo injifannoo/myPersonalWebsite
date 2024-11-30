@@ -35,8 +35,10 @@ def test_homepage_title(setup_browser):
 #     assert "ITU" in driver.title
 
 def test_contact_form_submission(setup_browser):
+    BASE_URL = os.getenv("BASE_URL", "http://localhost:5173")
     driver = setup_browser
-    driver.get("http://localhost:5173/contact")
+    driver.get(BASE_URL)  # Replace with your live URL when deploying
+    assert "ITU" in driver.title, f"Expected 'ITU' in title but got '{driver.title}'"
 
     # Locate the form inputs
     name_input = driver.find_element(By.NAME, 'your_name')
