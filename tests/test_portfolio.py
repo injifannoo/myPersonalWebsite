@@ -20,8 +20,8 @@ def setup_browser():
 
     # Initialize the Chrome WebDriver
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    driver.set_page_load_timeout(300)
     yield driver
-    driver.set_page_load_timeout(2400)
     driver.quit()
 
 def test_homepage_title(setup_browser):
@@ -53,7 +53,7 @@ def test_contact_form_submission(setup_browser):
     submit_button.click()
 
     # Check for a success message or redirection as needed (modify accordingly)
-    # WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//div[contains(text(), 'Thank you')]")))  # Example of checking for success message
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//div[contains(text(), 'Thank you')]")))  # Example of checking for success message
 
 def test_send_email_link(setup_browser):
     driver = setup_browser
