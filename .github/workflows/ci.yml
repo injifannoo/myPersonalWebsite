@@ -80,7 +80,7 @@ jobs:
       # Step 4: Start the application server
       - name: Start local server
         run: |
-          python -m http.server 57173 &
+          python -m http.server 5173 &
         env:
           DISPLAY: ":99.0"
 
