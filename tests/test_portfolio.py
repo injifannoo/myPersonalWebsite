@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
+import os
 
 @pytest.fixture(scope="module")
 def setup_browser():
@@ -22,8 +23,9 @@ def setup_browser():
     driver.quit()
 
 def test_homepage_title(setup_browser):
+    BASE_URL = os.getenv("BASE_URL", "http://localhost:5173")
     driver = setup_browser
-    driver.get("http://localhost:5173")  # Replace with your live URL when deploying
+    driver.get(BASE_URL)  # Replace with your live URL when deploying
     assert "ITU" in driver.title, f"Expected 'ITU' in title but got '{driver.title}'"
 # def test_homepage_title(setup_browser):
 #     driver = setup_browser
@@ -82,8 +84,15 @@ def test_linkedin_link(setup_browser):
     linkedin_link = driver.find_element(By.XPATH, "//a[contains(@href, 'linkedin.com/in/injifanotamiru')]")
     assert linkedin_link is not None
     assert linkedin_link.get_attribute("href") == "https://www.linkedin.com/in/injifanotamiru/"
+def test_github_link(setup_browser):
+    driver = setup_browser
+    driver.get("http://localhost:5173")
+    
+    github_link = driver.find_element(By.XPATH, "//a[contains(@href, 'github.com/injifannoo')]")
+    assert github_link is not None
+    assert github_link.get_attribute("href") == "https://github.com/injifannoo/"
 
-
+## Th following code also working.
 # import pytest
 # from selenium import webdriver
 # from selenium.webdriver.support.ui import WebDriverWait
@@ -121,13 +130,6 @@ def test_linkedin_link(setup_browser):
 #     submit_button = driver.find_element(By.CSS_SELECTOR, ".submitBtn")
 #     submit_button.click()
 
-# def test_send_email_link(setup_browser):
-#     driver = setup_browser
-#     driver.get("http://localhost:5173")
-#     send_email_link = driver.find_element(By.XPATH, "//a[contains(text(), 'injifanotu@gmail.com')]")
-#     assert send_email_link is not None
-#     assert send_email_link.get_attribute("href") == "injifanotu@gmail.com.com"
-
 # def test_phone_number_link(setup_browser):
 #     driver = setup_browser
 #     driver.get("http://localhost:5173")
@@ -136,12 +138,13 @@ def test_linkedin_link(setup_browser):
 #     assert phone_number_link is not None
 #     assert phone_number_link.get_attribute("href") == "tel:+251962408198"
 
-# # def test_github_link(setup_browser):
-# #     driver = setup_browser
-# #     driver.get("http://localhost:5173")
-# #     github_link = driver.find_element(By.XPATH, "//a[contains(@href, 'github.com/injifannoo')]")
-# #     assert github_link is not None
-# #     assert github_link.get_attribute("href") == "https://github.com/injifannoo/"
+# def test_github_link(setup_browser):
+#     driver = setup_browser
+#     driver.get("http://localhost:5173")
+#     github_link = driver.find_element(By.XPATH, "//a[contains(@href, 'github.com/injifannoo')]")
+#     assert github_link is not None
+#     assert github_link.get_attribute("href") == "https://github.com/injifannoo/"
+    
 # def test_send_email_link(setup_browser):
 #     driver = setup_browser
 #     driver.get("http://localhost:5173")
