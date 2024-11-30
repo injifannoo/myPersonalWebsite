@@ -21,7 +21,7 @@ def setup_browser():
     # Initialize the Chrome WebDriver
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     yield driver
-    driver.set_page_load_timeout(240)
+    driver.set_page_load_timeout(2400)
     driver.quit()
 
 def test_homepage_title(setup_browser):
