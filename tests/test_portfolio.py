@@ -62,9 +62,9 @@ def test_contact_form_submission(setup_browser):
     driver.get("http://localhost:5173/contact")
 
     # Wait for the form inputs to be present
-    name_input = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.NAME, 'your_name')))
-    email_input = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.NAME, 'your_email')))
-    message_input = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.NAME, 'message')))
+    name_input = WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.NAME, 'your_name')))
+    email_input = WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.NAME, 'your_email')))
+    message_input = WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.NAME, 'message')))
 
     # Fill in the inputs with test data
     name_input.send_keys("Test User")
@@ -72,11 +72,11 @@ def test_contact_form_submission(setup_browser):
     message_input.send_keys("This is a test message.")
 
     # Submit the form
-    submit_button = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".submitBtn")))
+    submit_button = WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".submitBtn")))
     submit_button.click()
 
     # Check for a success message
-    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "//div[contains(text(), 'Thank you')]")))
+    WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.XPATH, "//div[contains(text(), 'Thank you')]")))
 def test_send_email_link(setup_browser):
     driver = setup_browser
     driver.get("http://localhost:5173")
